@@ -34,6 +34,7 @@ public class Acceder {
 
             Intent intent = new Intent(ctx, MainActivity.class);
             ctx.startActivity(intent);
+            activity.finishAffinity();
         }else{
 
             //compruebo lo intentos de acceso y si pasa de 3 cierro la app

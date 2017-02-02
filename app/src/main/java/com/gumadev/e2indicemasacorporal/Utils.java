@@ -2,6 +2,7 @@ package com.gumadev.e2indicemasacorporal;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 
 /**
@@ -42,8 +43,15 @@ public class Utils {
         return mensaje;
     }
 
-    public static void salir(Context ct){
-        Activity activity = (Activity) ct;
+    public static void salir(Context ctx){
+
+        Activity activity = (Activity) ctx;
+        SharedPreferences sharedPreferences = activity.getSharedPreferences("preferen", ctx.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("logueo", false);
+        editor.commit();
+
         activity.finishAffinity();
     }
 

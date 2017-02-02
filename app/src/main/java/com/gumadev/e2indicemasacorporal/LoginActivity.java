@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
             //se ha logueado anteriormente
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            finishAffinity();
         }
 
         Button accederBT = (Button) findViewById(R.id.acceder);
